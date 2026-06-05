@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - TradeHub Marketplace</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TradeHub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register</a>
+        <a href="shop.html">Shop</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Login to TradeHub</h1>
+</section>
+
+<div class="container" id="authSection">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email"><br>
+    <input type="password" id="password" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="message"></p>
+</div>
+
+<div class="container hidden" id="appSection">
+    <h2>Welcome to Your Trading Dashboard</h2>
+    <a href="dashboard.html">Go to Dashboard</a>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

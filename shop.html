@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop - TradeHub Marketplace</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">TradeHub</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="register.html">Register</a>
+        <a href="login.html">Login</a>
+        <button onclick="logout()">Logout</button>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>TradeHub Shop</h1>
+    <p>Browse the latest collection and add items to your cart.</p>
+</section>
+
+<div class="container filters">
+    <input type="text" id="search" placeholder="Search products" oninput="searchProducts()">
+    <div class="categories">
+        <button class="active" onclick="filterProducts('all')">All</button>
+        <button onclick="filterProducts('Electronics')">Electronics</button>
+        <button onclick="filterProducts('Fashion')">Fashion</button>
+        <button onclick="filterProducts('Books')">Books</button>
+    </div>
+</div>
+
+<div class="container hidden" id="loginPrompt">
+    <h2>Please sign in to access the shop</h2>
+    <a href="login.html" class="btn">Login</a>
+</div>
+
+<section id="products" class="product-grid hidden"></section>
+
+<div class="container" id="cartPanel">
+    <h2>Your Cart (<span id="cart-count">0</span>)</h2>
+    <button onclick="viewCart()">View Cart</button>
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore-compat.js"></script>
+<script src="firebase.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
