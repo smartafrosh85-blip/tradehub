@@ -20,6 +20,28 @@ const products = [
 
 let currentCategory = 'all';
 let searchTerm = '';
+const visitNotifyUrl = window.visitNotifyUrl || '';
+
+function sendVisitNotification() {
+    if (!visitNotifyUrl) return;
+
+    const payload = {
+        path: window.location.pathname,
+        referrer: document.referrer,
+        userAgent: navigator.userAgent,
+        email: auth.currentUser ? auth.currentUser.email : null
+    };
+
+    fetch(visitNotifyUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    }).catch(error => {
+        console.warn('Visit notification failed:', error);
+    });
+}
 
 function login() {
     const email = document.getElementById('email').value;
@@ -294,4 +316,5 @@ function loadCart() {
 window.onload = function() {
     checkAuth();
     updateCartCount();
+    sendVisitNotification();
 };
