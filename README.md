@@ -38,6 +38,15 @@ firebase deploy --only functions
 4. Use the deployed `notifyVisit` URL in `firebase.js`.
 5. When a user registers, the `sendRegistrationEmail` function sends a notification email automatically.
 
+### Deploy helper
+A simple PowerShell script is included to deploy your Firebase Functions:
+
+```powershell
+.\deploy-functions.ps1 -ProjectId "your-project-id" -SendGridKey "YOUR_SENDGRID_API_KEY" -AdminEmail "you@example.com" -FromEmail "noreply@yourdomain.com"
+```
+
+Make sure to update `.firebaserc` with your Firebase project ID before running the script.
+
 ### Notes on email delivery
 - This code uses SendGrid for email delivery.
 - You must set a SendGrid API key via Firebase config.
